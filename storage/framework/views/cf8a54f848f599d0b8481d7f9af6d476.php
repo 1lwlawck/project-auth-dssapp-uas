@@ -9,9 +9,16 @@
                     </label>
                     <input wire:model="kd_produk" id="kd_produk" type="text" placeholder="SMBK---"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('kd_produk')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['kd_produk'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nama_produk">
@@ -19,9 +26,16 @@
                     </label>
                     <input wire:model="nama_produk" id="nama_produk" type="text" placeholder="Masukan Nama Produk"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('nama_produk')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['nama_produk'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="harga">
@@ -29,9 +43,16 @@
                     </label>
                     <input wire:model="harga" id="harga" type="text" placeholder="Masukan Harga"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('harga')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['harga'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="stok">
@@ -39,9 +60,16 @@
                     </label>
                     <input wire:model="stok" id="stok" type="text" placeholder="Masukan Jumlah Stok"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('stok')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['stok'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="jumlah_penjualan">
@@ -50,9 +78,16 @@
                     <input wire:model="jumlah_penjualan" id="jumlah_penjualan" type="text"
                         placeholder="Masukan Jumlah Penjualan"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('jumlah_penjualan')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['jumlah_penjualan'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
@@ -60,9 +95,16 @@
                     </label>
                     <input wire:model="rating" id="rating" type="text" placeholder="Masukan Rating"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('rating')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['rating'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="jumlah_permintaan">
@@ -71,9 +113,16 @@
                     <input wire:model="jumlah_permintaan" id="jumlah_permintaan" type="text"
                         placeholder="Masukan Jumlah Permintaan"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('jumlah_permintaan')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['jumlah_permintaan'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nilai_rekomendasi">
@@ -82,9 +131,16 @@
                     <input wire:model="nilai_rekomendasi" id="nilai_rekomendasi" type="text"
                         placeholder="Masukan Nilai Rekomendasi"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                    @error('nilai_rekomendasi')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['nilai_rekomendasi'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4 col-span-2">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
@@ -92,9 +148,16 @@
                     </label>
                     <textarea wire:model="description" id="description" placeholder="Masukan Deskripsi Produk"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                    @error('description')
-                        <span class="text-red-500 text-xs italic">{{ $message }}</span>
-                    @enderror
+                    <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['description'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <span class="text-red-500 text-xs italic"><?php echo e($message); ?></span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
             </div>
             <div class="flex justify-end">
@@ -181,54 +244,55 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                    @foreach ($products as $product)
+                                    <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                                {{ $product->product_id }}</td>
+                                                <?php echo e($product->product_id); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->kd_produk }}</td>
+                                                <?php echo e($product->kd_produk); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->nama_produk }}</td>
+                                                <?php echo e($product->nama_produk); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->harga }}</td>
+                                                <?php echo e($product->harga); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->stok }}</td>
+                                                <?php echo e($product->stok); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->description }}</td>
+                                                <?php echo e($product->description); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->jumlah_penjualan }}</td>
+                                                <?php echo e($product->jumlah_penjualan); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->rating }}</td>
+                                                <?php echo e($product->rating); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->jumlah_permintaan }}</td>
+                                                <?php echo e($product->jumlah_permintaan); ?></td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                {{ $product->nilai_rekomendasi }}</td>
+                                                <?php echo e($product->nilai_rekomendasi); ?></td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <button wire:click="edit({{ $product->product_id }})"
+                                                <button wire:click="edit(<?php echo e($product->product_id); ?>)"
                                                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                                                <button wire:click="delete({{ $product->product_id }})"
+                                                <button wire:click="delete(<?php echo e($product->product_id); ?>)"
                                                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
                                 </tbody>
                             </table>
                             <div class="m-4">
-                                {{ $products->links() }}
+                                <?php echo e($products->links()); ?>
+
                             </div>
-                            @if ($products->isEmpty())
+                            <!--[if BLOCK]><![endif]--><?php if($products->isEmpty()): ?>
                                 <p class="text-center py-4">No products found.</p>
-                            @endif
+                            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                         </div>
                     </div>
                 </div>
@@ -236,3 +300,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH C:\laragon\www\project-auth-dssapp-main\resources\views/livewire/product-management.blade.php ENDPATH**/ ?>

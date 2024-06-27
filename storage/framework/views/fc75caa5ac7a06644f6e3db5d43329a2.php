@@ -77,80 +77,82 @@
                                     </thead>
                                     <tbody
                                         class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                        @foreach ($products as $product)
+                                        <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                                    {{ $product->product_id }}
+                                                    <?php echo e($product->product_id); ?>
+
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->kd_produk }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'kd_produk', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->kd_produk); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'kd_produk', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->nama_produk }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'nama_produk', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->nama_produk); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'nama_produk', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->harga }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'harga', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->harga); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'harga', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->stok }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'stok', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->stok); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'stok', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->description }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'description', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->description); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'description', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->jumlah_penjualan }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'jumlah_penjualan', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->jumlah_penjualan); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'jumlah_penjualan', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->rating }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'rating', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->rating); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'rating', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->jumlah_permintaan }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'jumlah_permintaan', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->jumlah_permintaan); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'jumlah_permintaan', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <input type="text" value="{{ $product->nilai_rekomendasi }}"
-                                                        wire:change="updateProduct({{ $product->product_id }}, 'nilai_rekomendasi', $event.target.value)"
+                                                    <input type="text" value="<?php echo e($product->nilai_rekomendasi); ?>"
+                                                        wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'nilai_rekomendasi', $event.target.value)"
                                                         class="w-full bg-transparent border-none text-gray-900 dark:text-white">
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                    <button wire:click="delete({{ $product->product_id }})"
+                                                    <button wire:click="delete(<?php echo e($product->product_id); ?>)"
                                                         class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
                                     </tbody>
                                 </table>
                                 <div class="m-4">
-                                    {{ $products->links() }}
+                                    <?php echo e($products->links()); ?>
+
                                 </div>
-                                @if ($products->isEmpty())
+                                <!--[if BLOCK]><![endif]--><?php if($products->isEmpty()): ?>
                                     <p class="text-center py-4">No products found.</p>
-                                @endif
+                                <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                             </div>
                         </div>
                     </div>
@@ -159,3 +161,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH C:\laragon\www\project-auth-dssapp-main\resources\views/livewire/penilaian-component.blade.php ENDPATH**/ ?>

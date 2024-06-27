@@ -39,8 +39,6 @@
                     <div class="text-xl font-bold text-gray-700 mb-4">Grafik Penjualan Bulanan</div>
                     <canvas id="salesChart"></canvas>
                 </div>
-
-                <!-- Aktivitas Terbaru -->
                 <!-- Aktivitas Terbaru -->
                 <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white shadow-lg rounded-lg p-4">
                     <div class="text-xl font-bold text-gray-700 mb-4">Aktivitas Terbaru</div>
@@ -53,38 +51,7 @@
                     </ul>
                 </div>
 
-                <!-- Kalender  -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700 mb-4">Kalender</div>
-                    <div id="calendar"></div>
-                </div>
-            </div>
-        </div>
+                {{--  Ranking Sementara --}}
 
-        @push('scripts')
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                var ctx = document.getElementById('salesChart').getContext('2d');
-                var salesChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                        datasets: [{
-                            label: 'Penjualan',
-                            data: [10, 20, 30, 40, 50, 60],
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            </script>
-        @endpush
+
 </x-app-layout>
