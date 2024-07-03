@@ -17,8 +17,8 @@
 
             <!-- Header: Right side -->
             <div class="flex items-center space-x-3">
-                <h1 class="text-l text-slate-800 dark:text-slate-100 font-bold">SPPT</h1>
-                <span>( Sistem Perhitungan Produk
+                <h1 class="text-base md:text-l text-slate-800 dark:text-slate-100 font-bold">SPPT</h1>
+                <span class="hidden md:inline-block">( Sistem Perhitungan Produk
                     Terpopuler )</span>
 
                 <!-- Dark mode toggle -->

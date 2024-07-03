@@ -18,21 +18,25 @@
                     <div class="overflow-x-auto">
                         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="overflow-hidden shadow-md sm:rounded-lg">
-                                <table class="min-w-full">
+                                <table class="min-w-full bg-white dark:bg-gray-800 text-black dark:text-white">
                                     <thead class="bg-gray-50 dark:bg-gray-700">
                                         <tr>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
-                                                ID</th>
+                                                ID
+                                            </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
-                                                Kriteria</th>
+                                                Kriteria
+                                            </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
-                                                Label</th>
+                                                Label
+                                            </th>
                                             <th scope="col"
                                                 class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
-                                                Bobot</th>
+                                                Bobot
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody
@@ -41,16 +45,24 @@
                                             <tr>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                                    <?php echo e($kriteria->id); ?></td>
+                                                    <?php echo e($kriteria->id); ?>
+
+                                                </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <?php echo e($kriteria->kriteria); ?></td>
+                                                    <?php echo e($kriteria->kriteria); ?>
+
+                                                </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <?php echo e($kriteria->label); ?></td>
+                                                    <?php echo e($kriteria->label); ?>
+
+                                                </td>
                                                 <td
                                                     class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                                    <?php echo e($kriteria->bobot); ?></td>
+                                                    <?php echo e($kriteria->bobot); ?>
+
+                                                </td>
                                             </tr>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
@@ -64,7 +76,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

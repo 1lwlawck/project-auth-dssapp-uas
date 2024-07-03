@@ -1,10 +1,10 @@
-<div class="container mx-auto mt-8">
+<div class="container mx-auto mt-8 ">
     <!-- Form Produk -->
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Field Inputs -->
-                <div class="mb-4">
+                <div class="mb-4 ">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="kd_produk">
                         Kode Produk
                     </label>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="jumlah_penjualan">
-                        Jumlah Penjualan
+                        Jml Penjualan
                     </label>
                     <input wire:model="jumlah_penjualan" id="jumlah_penjualan" type="text"
                         placeholder="Masukan Jumlah Penjualan"
@@ -68,7 +68,7 @@
                 <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
                         for="jumlah_permintaan">
-                        Jumlah Permintaan
+                        Permintaan
                     </label>
                     <input wire:model="jumlah_permintaan" id="jumlah_permintaan" type="text"
                         placeholder="Masukan Jumlah Permintaan"
@@ -110,7 +110,7 @@
     </div>
 
     <!-- Form Pencarian Produk -->
-    <form class="max-w-full mt-4 mb-4">
+    <form class="max-w-full mt-4 mb-4 mr-2 ml-2">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Cari</label>
         <div class="relative">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -120,14 +120,14 @@
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="search" wire:model.live="search" id="default-search"
+            <input type="search" wire:model.debounce.300ms="search" id="default-search"
                 class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Cari Produk Alternatif" />
         </div>
     </form>
 
     <!-- Tabel Produk -->
-    <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
+    <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg overflow-x-auto m-4">
         <div class="container mx-auto">
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -227,7 +227,8 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button wire:click="edit({{ $product->product_id }})"
                                                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                                                <button wire:click="delete({{ $product->product_id }})"
+                                                <button
+                                                    wire:click="confirmProductDeletion({{ $product->product_id }})"
                                                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                             </td>
                                         </tr>

@@ -46,7 +46,7 @@
     <div class="relative">
         <h1 id="greeting" class="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">Good <span
                 id="timeOfDay" class="font-semibold"></span>, {{ Auth::user()->name }} 👋</h1>
-        <p class="dark:text-indigo-200">Here is what's happening with your projects today:</p>
+        <p class="dark:text-indigo-200">Lets Work For Your Future 👩‍💻</p>
     </div>
 </div>
 
