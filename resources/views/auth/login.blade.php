@@ -1,9 +1,9 @@
 <x-authentication-layout>
 
-    @section('title', __('Login'))
+    @section('title', __('Masuk'))
 
 
-    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('Welcome back!') }} ✨</h1>
+    <h1 class="text-3xl text-slate-800 dark:text-slate-100 font-bold mb-6">{{ __('Selamat Datang!') }} ✨</h1>
     @if (session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ session('status') }}
@@ -18,7 +18,7 @@
                 <x-input id="email" type="email" name="email" :value="old('email')" required autofocus />
             </div>
             <div>
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Kata Sandi') }}" />
                 <div class="relative">
                     <button type="button" class="absolute top-0 end-0 p-3.5 rounded-e-md"
                         onclick="togglePasswordVisibility()">
@@ -48,17 +48,17 @@
             @if (Route::has('password.request'))
                 <div class="mr-1">
                     <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
-                        {{ __('Forgot Password?') }}
+                        {{ __('Lupa Password?') }}
                     </a>
                 </div>
             @endif
 
             <x-btn-google>
-                {{ __('Login with Google') }}
+                {{ __('Masuk dengan Google') }}
             </x-btn-google>
 
             <x-button class="">
-                {{ __('Sign in') }}
+                {{ __('Masuk') }}
             </x-button>
 
 
@@ -68,9 +68,9 @@
     <!-- Footer -->
     <div class="pt-5 mt-6 border-t border-slate-200 dark:border-slate-700">
         <div class="text-sm">
-            {{ __('Don\'t you have an account?') }} <a
+            {{ __('Apakah kamu belum punya akun ?') }} <a
                 class="font-medium text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400"
-                href="{{ route('register') }}">{{ __('Sign Up') }}</a>
+                href="{{ route('register') }}">{{ __('Daftar') }}</a>
         </div>
 
     </div>
