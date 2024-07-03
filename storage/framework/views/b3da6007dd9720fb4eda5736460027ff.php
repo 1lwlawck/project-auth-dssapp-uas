@@ -32,7 +32,6 @@
 </head>
 
 <body class="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
-
     <main class="flex items-center justify-center min-h-screen bg-white dark:bg-slate-900">
         <div class="w-full max-w-md p-8 bg-white shadow-lg rounded-lg dark:bg-gray-800">
             <!-- Header -->
@@ -63,7 +62,6 @@
                     </svg>
                 </a>
             </div>
-
             <div class="max-w-sm mx-auto w-full">
                 <?php echo e($slot); ?>
 
