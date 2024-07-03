@@ -17,14 +17,9 @@
 
             <!-- Header: Right side -->
             <div class="flex items-center space-x-3">
-                <!-- Search Button with Modal -->
-                <x-modal-search />
-
-                <!-- Notifications button -->
-                <x-dropdown-notifications align="right" />
-
-                <!-- Info button -->
-                <x-dropdown-help align="right" />
+                <h1 class="text-l text-slate-800 dark:text-slate-100 font-bold">SPPT</h1>
+                <span>( Sistem Perhitungan Produk
+                    Terpopuler )</span>
 
                 <!-- Dark mode toggle -->
                 <x-theme-toggle />

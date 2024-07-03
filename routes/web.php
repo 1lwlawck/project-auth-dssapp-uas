@@ -36,7 +36,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/alternative', [DashboardController::class, 'alternative'])->name('alternative');
     Route::get('/kriteria', [DashboardController::class, 'kriteria'])->name('kriteria');
     Route::get('/penilaian', [DashboardController::class, 'penilaian'])->name('penilaian');
-    Route::get('/proses', [DashboardController::class, 'proses'])->name('proses');
     Route::get('/laporan', [DashboardController::class, 'laporan'])->name('laporan');
     Route::get('/user', [DashboardController::class, 'user'])->name('users');
     Route::get('/dashboard/analytics', [DashboardController::class, 'analytics'])->name('analytics');

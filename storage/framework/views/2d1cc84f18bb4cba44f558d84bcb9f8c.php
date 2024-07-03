@@ -17,71 +17,9 @@
 
             <!-- Header: Right side -->
             <div class="flex items-center space-x-3">
-                <!-- Search Button with Modal -->
-                <?php if (isset($component)) { $__componentOriginal13ee9a0e8138817f2f9da799ef194e6c = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal13ee9a0e8138817f2f9da799ef194e6c = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.modal-search','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('modal-search'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal13ee9a0e8138817f2f9da799ef194e6c)): ?>
-<?php $attributes = $__attributesOriginal13ee9a0e8138817f2f9da799ef194e6c; ?>
-<?php unset($__attributesOriginal13ee9a0e8138817f2f9da799ef194e6c); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal13ee9a0e8138817f2f9da799ef194e6c)): ?>
-<?php $component = $__componentOriginal13ee9a0e8138817f2f9da799ef194e6c; ?>
-<?php unset($__componentOriginal13ee9a0e8138817f2f9da799ef194e6c); ?>
-<?php endif; ?>
-
-                <!-- Notifications button -->
-                <?php if (isset($component)) { $__componentOriginalf79de796c8f6af2e04e458215bf88445 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalf79de796c8f6af2e04e458215bf88445 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.dropdown-notifications','data' => ['align' => 'right']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('dropdown-notifications'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['align' => 'right']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalf79de796c8f6af2e04e458215bf88445)): ?>
-<?php $attributes = $__attributesOriginalf79de796c8f6af2e04e458215bf88445; ?>
-<?php unset($__attributesOriginalf79de796c8f6af2e04e458215bf88445); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalf79de796c8f6af2e04e458215bf88445)): ?>
-<?php $component = $__componentOriginalf79de796c8f6af2e04e458215bf88445; ?>
-<?php unset($__componentOriginalf79de796c8f6af2e04e458215bf88445); ?>
-<?php endif; ?>
-
-                <!-- Info button -->
-                <?php if (isset($component)) { $__componentOriginala308611a4282b4c749bf2379e6194123 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginala308611a4282b4c749bf2379e6194123 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.dropdown-help','data' => ['align' => 'right']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('dropdown-help'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['align' => 'right']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginala308611a4282b4c749bf2379e6194123)): ?>
-<?php $attributes = $__attributesOriginala308611a4282b4c749bf2379e6194123; ?>
-<?php unset($__attributesOriginala308611a4282b4c749bf2379e6194123); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginala308611a4282b4c749bf2379e6194123)): ?>
-<?php $component = $__componentOriginala308611a4282b4c749bf2379e6194123; ?>
-<?php unset($__componentOriginala308611a4282b4c749bf2379e6194123); ?>
-<?php endif; ?>
+                <h1 class="text-l text-slate-800 dark:text-slate-100 font-bold">SPPT</h1>
+                <span>( Sistem Perhitungan Produk
+                    Terpopuler )</span>
 
                 <!-- Dark mode toggle -->
                 <?php if (isset($component)) { $__componentOriginal2090438866f3dcdb76cd8b070bcc302d = $component; } ?>

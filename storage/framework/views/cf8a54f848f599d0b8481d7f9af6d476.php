@@ -1,14 +1,14 @@
 <div class="container mx-auto mt-8">
     <!-- Form Produk -->
-    <div class="p-4 bg-white shadow-md sm:rounded-lg">
+    <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="kd_produk">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="kd_produk">
                         Kode Produk
                     </label>
                     <input wire:model="kd_produk" id="kd_produk" type="text" placeholder="SMBK---"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['kd_produk'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -21,11 +21,11 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nama_produk">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="nama_produk">
                         Nama Produk
                     </label>
                     <input wire:model="nama_produk" id="nama_produk" type="text" placeholder="Masukan Nama Produk"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['nama_produk'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -38,11 +38,11 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="harga">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="harga">
                         Harga
                     </label>
                     <input wire:model="harga" id="harga" type="text" placeholder="Masukan Harga"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['harga'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -55,11 +55,11 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="stok">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="stok">
                         Stok
                     </label>
                     <input wire:model="stok" id="stok" type="text" placeholder="Masukan Jumlah Stok"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['stok'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -72,12 +72,12 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jumlah_penjualan">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="jumlah_penjualan">
                         Jumlah Penjualan
                     </label>
                     <input wire:model="jumlah_penjualan" id="jumlah_penjualan" type="text"
                         placeholder="Masukan Jumlah Penjualan"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['jumlah_penjualan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -90,11 +90,11 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="rating">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="rating">
                         Rating
                     </label>
                     <input wire:model="rating" id="rating" type="text" placeholder="Masukan Rating"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['rating'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -107,12 +107,13 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jumlah_permintaan">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                        for="jumlah_permintaan">
                         Jumlah Permintaan
                     </label>
                     <input wire:model="jumlah_permintaan" id="jumlah_permintaan" type="text"
                         placeholder="Masukan Jumlah Permintaan"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['jumlah_permintaan'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -125,12 +126,13 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nilai_rekomendasi">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2"
+                        for="nilai_rekomendasi">
                         Nilai Rekomendasi
                     </label>
                     <input wire:model="nilai_rekomendasi" id="nilai_rekomendasi" type="text"
                         placeholder="Masukan Nilai Rekomendasi"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['nilai_rekomendasi'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -143,11 +145,11 @@ endif;
 unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                 </div>
                 <div class="mb-4 col-span-2">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                    <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="description">
                         Deskripsi
                     </label>
                     <textarea wire:model="description" id="description" placeholder="Masukan Deskripsi Produk"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                     <!--[if BLOCK]><![endif]--><?php $__errorArgs = ['description'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -162,16 +164,16 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
             </div>
             <div class="flex justify-end">
                 <button type="submit"
-                    class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">SIMPAN</button>
+                    class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">SIMPAN</button>
                 <button type="reset"
-                    class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">RESET</button>
+                    class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">RESET</button>
             </div>
         </form>
     </div>
 
     <!-- Tabel Produk -->
 
-    <form class="max-w-full  mt-4 mb-4">
+    <form class="max-w-full mt-4 mb-4">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Cari</label>
         <div class="relative">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -189,53 +191,53 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
         </div>
     </form>
 
-    <div class="p-4  bg-white shadow-md sm:rounded-lg">
+    <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <div class="container mx-auto">
             <div class="flex flex-col">
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="overflow-hidden shadow-md sm:rounded-lg">
                             <table class="min-w-full">
-                                <thead class="bg-gray-50 dark:bg-gray-700">
+                                <thead class="bg-gray-50 dark:bg-gray-700 ">
                                     <tr>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             ID Produk
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Kode Produk
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Nama Produk
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Harga
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Stok
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Deskripsi
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Jumlah Penjualan
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Rating
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Jumlah Permintaan
                                         </th>
                                         <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
                                             Nilai Rekomendasi
                                         </th>
                                         <th scope="col" class="relative px-6 py-3">
@@ -250,31 +252,31 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                                 <?php echo e($product->product_id); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->kd_produk); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->nama_produk); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->harga); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->stok); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->description); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->jumlah_penjualan); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->rating); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->jumlah_permintaan); ?></td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                                 <?php echo e($product->nilai_rekomendasi); ?></td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button wire:click="edit(<?php echo e($product->product_id); ?>)"
@@ -286,7 +288,7 @@ unset($__errorArgs, $__bag); ?><!--[if ENDBLOCK]><![endif]-->
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
                                 </tbody>
                             </table>
-                            <div class="m-4">
+                            <div class="m-4 ">
                                 <?php echo e($products->links()); ?>
 
                             </div>

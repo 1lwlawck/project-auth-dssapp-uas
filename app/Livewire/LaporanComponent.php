@@ -2,53 +2,79 @@
 
 namespace App\Livewire;
 
-
 use Livewire\Component;
-
-
 use Livewire\WithPagination;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class LaporanComponent extends Component
 {
     use WithPagination;
 
     public $weights = [
-        'harga' => 0.2,
-        'stok' => 0.1,
-        'jumlah_penjualan' => 0.3,
-        'rating' => 0.3,
-        'jumlah_permintaan' => 0.1
+        'jumlah_penjualan' => 0.15,
+        'harga' => 0.10,
+        'rating' => 0.30,
+        'jumlah_permintaan' => 0.15,
+        'nilai_rekomendasi' => 0.30
     ];
+
+    protected $paginationTheme = 'tailwind';
+
+    public function export()
+    {
+        $products = Product::all();
+        $normalized = $this->normalize($products, $this->weights);
+        $ranked = $this->rank($normalized, $this->weights);
+        $rankedProducts = $this->combineRankedWithProducts($products, $ranked);
+
+        $csvContent = $this->generateCSV($rankedProducts);
+        $fileName = 'laporan_produk_terpopuler.csv';
+        Storage::disk('local')->put($fileName, $csvContent);
+
+        return Response::download(storage_path("app/{$fileName}"));
+    }
 
     public function render()
     {
         $products = Product::paginate(10);
-        $normalized = $this->normalize($products, $this->weights);
-        $ranked = $this->rank($normalized, $this->weights);
+        $allProducts = Product::all(); // Ambil semua produk untuk perhitungan normalisasi dan ranking
 
-        // Combine the ranked values with the original product data
-        $rankedProducts = $this->combineRankedWithProducts($products, $ranked);
+        $normalized = $this->normalize($allProducts, $this->weights);
+        $ranked = $this->rank($normalized, $this->weights);
+        $rankedProducts = $this->combineRankedWithProducts($allProducts, $ranked);
+
+        $pagedNormalized = $this->paginateArray($normalized, 10, 'normalizedPage');
+        $pagedRankedProducts = $this->paginateArray($rankedProducts, 10, 'rankedPage');
 
         return view('livewire.laporan-component', [
             'products' => $products,
-            'normalized' => $normalized,
-            'rankedProducts' => $rankedProducts
+            'normalized' => $pagedNormalized,
+            'rankedProducts' => $pagedRankedProducts,
         ]);
     }
 
     private function normalize($products, $weights)
     {
         $maxValues = [];
+        $minValues = [];
+
         foreach ($weights as $key => $weight) {
             $maxValues[$key] = $products->max($key);
+            $minValues[$key] = $products->min($key);
         }
 
         $normalized = [];
         foreach ($products as $product) {
             $normalizedProduct = [];
             foreach ($weights as $key => $weight) {
-                $normalizedProduct[$key] = $product->$key / $maxValues[$key];
+                if (in_array($key, ['jumlah_penjualan', 'rating', 'nilai_rekomendasi'])) {
+                    $normalizedProduct[$key] = $product->$key / $maxValues[$key];
+                } else {
+                    $normalizedProduct[$key] = $minValues[$key] / $product->$key;
+                }
             }
             $normalized[] = $normalizedProduct;
         }
@@ -67,7 +93,6 @@ class LaporanComponent extends Component
             $ranked[] = $total;
         }
 
-        // Sort ranked values in descending order
         arsort($ranked);
         return $ranked;
     }
@@ -86,5 +111,28 @@ class LaporanComponent extends Component
             $rank++;
         }
         return $rankedProducts;
+    }
+
+    private function generateCSV($rankedProducts)
+    {
+        $header = ['Ranking', 'Kode Produk', 'Nama Produk', 'Nilai Preferensi'];
+        $csvContent = implode(',', $header) . "\n";
+
+        foreach ($rankedProducts as $product) {
+            $csvContent .= "{$product['rank']},{$product['kd_produk']},{$product['nama_produk']},{$product['nilai_preferensi']}\n";
+        }
+
+        return $csvContent;
+    }
+
+    private function paginateArray(array $items, int $perPage, string $pageName)
+    {
+        $page = LengthAwarePaginator::resolveCurrentPage($pageName);
+        $total = count($items);
+        $currentItems = array_slice($items, ($page - 1) * $perPage, $perPage);
+        return new LengthAwarePaginator($currentItems, $total, $perPage, $page, [
+            'path' => LengthAwarePaginator::resolveCurrentPath(),
+            'pageName' => $pageName,
+        ]);
     }
 }

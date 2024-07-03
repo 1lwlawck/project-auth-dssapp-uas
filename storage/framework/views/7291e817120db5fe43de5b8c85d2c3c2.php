@@ -39,9 +39,6 @@
             <!-- Cards -->
             <div class="grid grid-cols-12 gap-6">
 
-
-
-
             </div>
 
         </div>
@@ -49,39 +46,40 @@
         <div class="container mx-auto mt-8 px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Ringkasan Statistik -->
-                <div class="bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700">Total Produk</div>
-                    <div class="text-3xl font-bold text-gray-900"><?php echo e($totalProducts); ?></div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
+                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300">Total Produk</div>
+                    <div class="text-3xl font-bold text-gray-900 dark:text-gray-100"><?php echo e($totalProducts); ?></div>
                 </div>
-                <div class="bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700">Total Kriteria</div>
-                    <div class="text-3xl font-bold text-gray-900"><?php echo e($totalKriterias); ?></div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
+                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300">Total Kriteria</div>
+                    <div class="text-3xl font-bold text-gray-900 dark:text-gray-100"><?php echo e($totalKriterias); ?></div>
                 </div>
-                <div class="bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700">Total Pengguna</div>
-                    <div class="text-3xl font-bold text-gray-900"><?php echo e($totalUsers); ?></div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
+                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300">Total Pengguna</div>
+                    <div class="text-3xl font-bold text-gray-900 dark:text-gray-100"><?php echo e($totalUsers); ?></div>
                 </div>
 
                 <!-- Grafik Penjualan -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700 mb-4">Grafik Penjualan Bulanan</div>
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
+                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">Grafik Penjualan Bulanan</div>
                     <canvas id="salesChart"></canvas>
                 </div>
                 <!-- Aktivitas Terbaru -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700 mb-4">Aktivitas Terbaru</div>
+                <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
+                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">Aktivitas Terbaru</div>
                     <ul>
                         <?php $__empty_1 = true; $__currentLoopData = $activities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $activity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                            <li class="border-b py-2"><?php echo e($activity->description); ?></li>
+                            <li class="border-b py-2 border-gray-300 dark:border-gray-700"><?php echo e($activity->description); ?>
+
+                            </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                             <li class="py-2">Tidak ada aktivitas terbaru.</li>
                         <?php endif; ?>
                     </ul>
                 </div>
-
-                
-
-
+            </div>
+        </div>
+    </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54)): ?>

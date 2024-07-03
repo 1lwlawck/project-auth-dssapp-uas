@@ -60,12 +60,6 @@ class DashboardController extends Controller
     {
         return view('pages/dashboard/penilaian');
     }
-
-    public function proses()
-    {
-        return view('pages/dashboard/proses');
-    }
-
     public function laporan()
     {
         return view('pages/dashboard/laporan');
