@@ -18,7 +18,21 @@ class ProductManagement extends Component
 
     public function render()
     {
-        $products = Product::orderBy('product_id')->paginate(10);
+        $products = Product::query()
+            ->when($this->search, function ($query) {
+                $searchTerm = '%' . $this->search . '%';
+                $query->where('kd_produk', 'like', $searchTerm)
+                    ->orWhere('nama_produk', 'like', $searchTerm)
+                    ->orWhere('harga', 'like', $searchTerm)
+                    ->orWhere('stok', 'like', $searchTerm)
+                    ->orWhere('jumlah_penjualan', 'like', $searchTerm)
+                    ->orWhere('rating', 'like', $searchTerm)
+                    ->orWhere('jumlah_permintaan', 'like', $searchTerm)
+                    ->orWhere('nilai_rekomendasi', 'like', $searchTerm)
+                    ->orWhere('description', 'like', $searchTerm);
+            })
+            ->orderBy('product_id')
+            ->paginate(10);
 
         return view('livewire.product-management', ['products' => $products]);
     }
@@ -84,7 +98,7 @@ class ProductManagement extends Component
                 'description' => $this->description,
             ]);
 
-            // Reorder the product IDs
+
             $this->reorderProductIDs();
         });
 
@@ -114,7 +128,7 @@ class ProductManagement extends Component
     public function delete($id)
     {
         DB::transaction(function () use ($id) {
-            // Delete the product
+
             Product::find($id)->delete();
 
             $this->reorderProductIDs();
@@ -125,10 +139,10 @@ class ProductManagement extends Component
 
     private function reorderProductIDs()
     {
-        // Get all products ordered by the current ID
+
         $products = Product::orderBy('product_id')->get();
 
-        // Update product IDs
+
         $currentId = 1;
         foreach ($products as $product) {
             $product->product_id = $currentId++;

@@ -3,6 +3,7 @@
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Field Inputs -->
                 <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="kd_produk">
                         Kode Produk
@@ -108,8 +109,7 @@
         </form>
     </div>
 
-    <!-- Tabel Produk -->
-
+    <!-- Form Pencarian Produk -->
     <form class="max-w-full mt-4 mb-4">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Cari</label>
         <div class="relative">
@@ -120,14 +120,13 @@
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="search" id="default-search"
+            <input type="search" wire:model.live="search" id="default-search"
                 class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Cari Produk Alternatif" required />
-            <button type="submit"
-                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cari</button>
+                placeholder="Cari Produk Alternatif" />
         </div>
     </form>
 
+    <!-- Tabel Produk -->
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <div class="container mx-auto">
             <div class="flex flex-col">
@@ -135,7 +134,7 @@
                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="overflow-hidden shadow-md sm:rounded-lg">
                             <table class="min-w-full">
-                                <thead class="bg-gray-50 dark:bg-gray-700 ">
+                                <thead class="bg-gray-50 dark:bg-gray-700">
                                     <tr>
                                         <th scope="col"
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-white">
@@ -183,38 +182,48 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                    @foreach ($products as $product)
+                                    @forelse ($products as $product)
                                         <tr>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                                {{ $product->product_id }}</td>
+                                                {{ $product->product_id }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->kd_produk }}</td>
+                                                {{ $product->kd_produk }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->nama_produk }}</td>
+                                                {{ $product->nama_produk }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->harga }}</td>
+                                                {{ $product->harga }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->stok }}</td>
+                                                {{ $product->stok }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->description }}</td>
+                                                {{ $product->description }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->jumlah_penjualan }}</td>
+                                                {{ $product->jumlah_penjualan }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->rating }}</td>
+                                                {{ $product->rating }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->jumlah_permintaan }}</td>
+                                                {{ $product->jumlah_permintaan }}
+                                            </td>
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
-                                                {{ $product->nilai_rekomendasi }}</td>
+                                                {{ $product->nilai_rekomendasi }}
+                                            </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button wire:click="edit({{ $product->product_id }})"
                                                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</button>
@@ -222,15 +231,19 @@
                                                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="11"
+                                                class="px-6 py-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                                                No products found.
+                                            </td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
-                            <div class="m-4 ">
+                            <div class="m-4">
                                 {{ $products->links() }}
                             </div>
-                            @if ($products->isEmpty())
-                                <p class="text-center py-4">No products found.</p>
-                            @endif
                         </div>
                     </div>
                 </div>

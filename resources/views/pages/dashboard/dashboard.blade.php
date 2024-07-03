@@ -31,23 +31,6 @@
                     <div class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ $totalUsers }}</div>
                 </div>
 
-                <!-- Grafik Penjualan -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">Grafik Penjualan Bulanan</div>
-                    <canvas id="salesChart"></canvas>
-                </div>
-                <!-- Aktivitas Terbaru -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
-                    <div class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-4">Aktivitas Terbaru</div>
-                    <ul>
-                        @forelse($activities as $activity)
-                            <li class="border-b py-2 border-gray-300 dark:border-gray-700">{{ $activity->description }}
-                            </li>
-                        @empty
-                            <li class="py-2">Tidak ada aktivitas terbaru.</li>
-                        @endforelse
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
