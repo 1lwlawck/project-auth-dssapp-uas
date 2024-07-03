@@ -130,15 +130,7 @@
 <?php endif; ?>
             </div>
         </div>
-        <div class="flex items-center justify-between mt-6">
-            <?php if(Route::has('password.request')): ?>
-                <div class="mr-1">
-                    <a class="text-sm underline hover:no-underline" href="<?php echo e(route('password.request')); ?>">
-                        <?php echo e(__('Lupa Password?')); ?>
-
-                    </a>
-                </div>
-            <?php endif; ?>
+        <div class="flex items-center mt-6">
 
             <?php if (isset($component)) { $__componentOriginal7350640240a8e57abf7b1e9d4cabaa63 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal7350640240a8e57abf7b1e9d4cabaa63 = $attributes; } ?>
@@ -165,14 +157,14 @@
 
             <?php if (isset($component)) { $__componentOriginald0f1fd2689e4bb7060122a5b91fe8561 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginald0f1fd2689e4bb7060122a5b91fe8561 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => '']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.button','data' => ['class' => 'ml-4']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
 <?php $component->withName('button'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['class' => '']); ?>
+<?php $component->withAttributes(['class' => 'ml-4']); ?>
                 <?php echo e(__('Masuk')); ?>
 
              <?php echo $__env->renderComponent(); ?>
@@ -186,8 +178,18 @@
 <?php unset($__componentOriginald0f1fd2689e4bb7060122a5b91fe8561); ?>
 <?php endif; ?>
 
-
         </div>
+        <div class="mt-4">
+            <?php if(Route::has('password.request')): ?>
+                <div class="mr-1">
+                    <a class="text-sm underline hover:no-underline" href="<?php echo e(route('password.request')); ?>">
+                        <?php echo e(__('Lupa Password?')); ?>
+
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+
     </form>
     <?php if (isset($component)) { $__componentOriginalb24df6adf99a77ed35057e476f61e153 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalb24df6adf99a77ed35057e476f61e153 = $attributes; } ?>

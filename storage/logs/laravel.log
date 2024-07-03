@@ -10626,3 +10626,15 @@
 #64 C:\\laragon\\www\\project-auth-dssapp-main\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\laragon\\\\www\\\\...')
 #65 {main}
 "} 
+[2024-07-03 18:19:55] local.ERROR: Allowed memory size of 536870912 bytes exhausted (tried to allocate 36864 bytes) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 536870912 bytes exhausted (tried to allocate 36864 bytes) at C:\\laragon\\www\\project-auth-dssapp-main\\storage\\framework\\views\\b3da6007dd9720fb4eda5736460027ff.php:229)
+[stacktrace]
+#0 {main}
+"} 
+[2024-07-03 18:20:08] local.ERROR: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) at C:\\laragon\\www\\project-auth-dssapp-main\\storage\\framework\\views\\b3da6007dd9720fb4eda5736460027ff.php:53)
+[stacktrace]
+#0 {main}
+"} 
+[2024-07-03 18:20:20] local.ERROR: Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Allowed memory size of 536870912 bytes exhausted (tried to allocate 32768 bytes) at C:\\laragon\\www\\project-auth-dssapp-main\\storage\\framework\\views\\b3da6007dd9720fb4eda5736460027ff.php:53)
+[stacktrace]
+#0 {main}
+"} 

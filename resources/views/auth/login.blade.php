@@ -44,7 +44,18 @@
                 <x-input id="password" type="password" name="password" required autocomplete="current-password" />
             </div>
         </div>
-        <div class="flex items-center justify-between mt-6">
+        <div class="flex items-center mt-6">
+
+            <x-btn-google>
+                {{ __('Masuk dengan Google') }}
+            </x-btn-google>
+
+            <x-button class="ml-4">
+                {{ __('Masuk') }}
+            </x-button>
+
+        </div>
+        <div class="mt-4">
             @if (Route::has('password.request'))
                 <div class="mr-1">
                     <a class="text-sm underline hover:no-underline" href="{{ route('password.request') }}">
@@ -52,17 +63,8 @@
                     </a>
                 </div>
             @endif
-
-            <x-btn-google>
-                {{ __('Masuk dengan Google') }}
-            </x-btn-google>
-
-            <x-button class="">
-                {{ __('Masuk') }}
-            </x-button>
-
-
         </div>
+
     </form>
     <x-validation-errors class="mt-4" />
     <!-- Footer -->
