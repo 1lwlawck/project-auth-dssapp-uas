@@ -11,6 +11,8 @@ class PenilaianComponent extends Component
     use WithPagination;
 
     public $search = '';
+    public $error;
+
     protected $paginationTheme = 'tailwind';
 
     public function render()
@@ -49,8 +51,23 @@ class PenilaianComponent extends Component
     {
         $product = Product::find($productId);
         if ($product) {
+            // Validasi khusus untuk rating
+            if ($field === 'rating' && (!is_numeric($value) || $value < 0 || $value > 5)) {
+                session()->flash('error', 'Rating must be a number between 0 and 5.');
+                return;
+            }
+
+            // Validasi khusus untuk nilai rekomendasi
+            if ($field === 'nilai_rekomendasi' && (!is_numeric($value) || $value < 0 || $value > 100)) {
+                session()->flash('error', 'Nilai Rekomendasi must be a number between 0 and 100.');
+                return;
+            }
+
+            // Update nilai dan simpan
             $product->$field = $value;
             $product->save();
+
+            session()->flash('success', 'Product updated successfully.');
         }
     }
 
@@ -59,6 +76,7 @@ class PenilaianComponent extends Component
         $product = Product::find($productId);
         if ($product) {
             $product->delete();
+            session()->flash('success', 'Product deleted successfully.');
         }
     }
 }

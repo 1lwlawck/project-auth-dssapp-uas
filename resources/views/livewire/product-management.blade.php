@@ -1,5 +1,5 @@
 <div class="container mx-auto mt-8">
-    @include('components.notification')
+    @include('components.notification-action')
     <!-- Form Produk -->
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">

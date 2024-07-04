@@ -1,5 +1,5 @@
 <div class="container mx-auto mt-8">
-    <?php echo $__env->make('components.notification', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->make('components.notification-action', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Form Produk -->
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">

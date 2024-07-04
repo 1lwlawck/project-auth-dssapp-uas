@@ -60,7 +60,7 @@
                                                         wire:keydown.enter="update">
                                                 @else
                                                     <span
-                                                        wire:click="edit({{ $kriteria->id }}, 'bobot')">{{ $kriteria->bobot }}</span>
+                                                        class=wire:click="edit({{ $kriteria->id }}, 'bobot')">{{ $kriteria->bobot }}</span>
                                                 @endif
                                             </td>
                                         </tr>

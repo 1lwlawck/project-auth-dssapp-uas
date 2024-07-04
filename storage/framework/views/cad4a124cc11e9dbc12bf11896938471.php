@@ -61,7 +61,7 @@
                                                         wire:keydown.enter="update">
                                                 <?php else: ?>
                                                     <span
-                                                        wire:click="edit(<?php echo e($kriteria->id); ?>, 'bobot')"><?php echo e($kriteria->bobot); ?></span>
+                                                        class=wire:click="edit(<?php echo e($kriteria->id); ?>, 'bobot')"><?php echo e($kriteria->bobot); ?></span>
                                                 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                                             </td>
                                         </tr>
