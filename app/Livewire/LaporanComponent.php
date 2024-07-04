@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Product;
+use App\Models\Kriteria;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -13,15 +14,32 @@ class LaporanComponent extends Component
 {
     use WithPagination;
 
-    public $weights = [
-        'jumlah_penjualan' => 0.15,
-        'harga' => 0.10,
-        'rating' => 0.30,
-        'jumlah_permintaan' => 0.15,
-        'nilai_rekomendasi' => 0.30
-    ];
+    public $weights = [];
 
     protected $paginationTheme = 'tailwind';
+
+    public function mount()
+    {
+        $this->loadWeights();
+    }
+
+    public function loadWeights()
+    {
+        $criteriaMapping = [
+            'jumlah_penjualan' => 1,
+            'harga' => 2,
+            'rating' => 3,
+            'jumlah_permintaan' => 4,
+            'nilai_rekomendasi' => 5
+        ];
+
+        foreach ($criteriaMapping as $key => $id) {
+            $kriteria = Kriteria::find($id);
+            if ($kriteria) {
+                $this->weights[$key] = $kriteria->bobot;
+            }
+        }
+    }
 
     public function export()
     {
@@ -40,7 +58,7 @@ class LaporanComponent extends Component
     public function render()
     {
         $products = Product::paginate(10);
-        $allProducts = Product::all(); // Ambil semua produk untuk perhitungan normalisasi dan ranking
+        $allProducts = Product::all();
 
         $normalized = $this->normalize($allProducts, $this->weights);
         $ranked = $this->rank($normalized, $this->weights);
@@ -62,8 +80,8 @@ class LaporanComponent extends Component
         $minValues = [];
 
         foreach ($weights as $key => $weight) {
-            $maxValues[$key] = $products->max($key);
-            $minValues[$key] = $products->min($key);
+            $maxValues[$key] = $products->max($key) ?: 1;
+            $minValues[$key] = $products->min($key) ?: 1;
         }
 
         $normalized = [];
@@ -71,9 +89,9 @@ class LaporanComponent extends Component
             $normalizedProduct = [];
             foreach ($weights as $key => $weight) {
                 if (in_array($key, ['jumlah_penjualan', 'rating', 'nilai_rekomendasi'])) {
-                    $normalizedProduct[$key] = $product->$key / $maxValues[$key];
+                    $normalizedProduct[$key] = $product->$key ? $product->$key / $maxValues[$key] : 0;
                 } else {
-                    $normalizedProduct[$key] = $minValues[$key] / $product->$key;
+                    $normalizedProduct[$key] = $product->$key ? $minValues[$key] / $product->$key : 0;
                 }
             }
             $normalized[] = $normalizedProduct;

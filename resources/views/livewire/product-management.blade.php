@@ -1,15 +1,16 @@
-<div class="container mx-auto mt-8 ">
+<div class="container mx-auto mt-8">
+    @include('components.notification')
     <!-- Form Produk -->
     <div class="p-4 bg-white dark:bg-gray-800 shadow-md sm:rounded-lg">
         <form wire:submit.prevent="store" class="w-full">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Field Inputs -->
-                <div class="mb-4 ">
+                <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="kd_produk">
                         Kode Produk
                     </label>
-                    <input wire:model="kd_produk" id="kd_produk" type="text" placeholder="SMBK---"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                    <input wire:model="kd_produk" id="kd_produk" type="text" placeholder="SMBK"
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('kd_produk')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -19,7 +20,7 @@
                         Nama Produk
                     </label>
                     <input wire:model="nama_produk" id="nama_produk" type="text" placeholder="Masukan Nama Produk"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('nama_produk')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -29,7 +30,7 @@
                         Harga
                     </label>
                     <input wire:model="harga" id="harga" type="text" placeholder="Masukan Harga"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('harga')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -39,18 +40,18 @@
                         Stok
                     </label>
                     <input wire:model="stok" id="stok" type="text" placeholder="Masukan Jumlah Stok"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('stok')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" for="jumlah_penjualan">
-                        Jml Penjualan
+                        Penjualan
                     </label>
                     <input wire:model="jumlah_penjualan" id="jumlah_penjualan" type="text"
                         placeholder="Masukan Jumlah Penjualan"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('jumlah_penjualan')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -60,7 +61,7 @@
                         Rating
                     </label>
                     <input wire:model="rating" id="rating" type="text" placeholder="Masukan Rating"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('rating')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -72,7 +73,7 @@
                     </label>
                     <input wire:model="jumlah_permintaan" id="jumlah_permintaan" type="text"
                         placeholder="Masukan Jumlah Permintaan"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('jumlah_permintaan')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -84,7 +85,7 @@
                     </label>
                     <input wire:model="nilai_rekomendasi" id="nilai_rekomendasi" type="text"
                         placeholder="Masukan Nilai Rekomendasi"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline">
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900">
                     @error('nilai_rekomendasi')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -94,7 +95,7 @@
                         Deskripsi
                     </label>
                     <textarea wire:model="description" id="description" placeholder="Masukan Deskripsi Produk"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        class="shadow appearance-none border dark:border-gray-700 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline bg-white dark:bg-gray-900"></textarea>
                     @error('description')
                         <span class="text-red-500 text-xs italic">{{ $message }}</span>
                     @enderror
@@ -104,7 +105,7 @@
                 <button type="submit"
                     class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600">SIMPAN</button>
                 <button type="reset"
-                    class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">RESET</button>
+                    class="text-gray-700 bg-gray-200 hover:bg-gray-300 hover:text-white focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">RESET</button>
             </div>
         </form>
     </div>
@@ -120,7 +121,7 @@
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="search" wire:model.debounce.300ms="search" id="default-search"
+            <input type="search" wire:model.live="search" id="default-search"
                 class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Cari Produk Alternatif" />
         </div>
@@ -185,7 +186,7 @@
                                     @forelse ($products as $product)
                                         <tr>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white text-center">
                                                 {{ $product->product_id }}
                                             </td>
                                             <td
@@ -201,7 +202,7 @@
                                                 {{ $product->harga }}
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white text-center">
                                                 {{ $product->stok }}
                                             </td>
                                             <td
@@ -209,27 +210,26 @@
                                                 {{ $product->description }}
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white text-center">
                                                 {{ $product->jumlah_penjualan }}
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white text-center">
                                                 {{ $product->rating }}
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white text-center">
                                                 {{ $product->jumlah_permintaan }}
                                             </td>
                                             <td
-                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white text-center">
                                                 {{ $product->nilai_rekomendasi }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <button wire:click="edit({{ $product->product_id }})"
                                                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                                                <button
-                                                    wire:click="confirmProductDeletion({{ $product->product_id }})"
-                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                                <button wire:click="delete({{ $product->product_id }})"
+                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Hapus</button>
                                             </td>
                                         </tr>
                                     @empty

@@ -45,7 +45,7 @@
                             <!--[if BLOCK]><![endif]--><?php $__empty_1 = true; $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                 <tr>
                                     <td
-                                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white text-center">
                                         <?php echo e($product->product_id); ?></td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->kd_produk); ?>"
@@ -65,7 +65,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->stok); ?>"
                                             wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'stok', $event.target.value)"
-                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white">
+                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white text-center">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->description); ?>"
@@ -75,22 +75,22 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->jumlah_penjualan); ?>"
                                             wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'jumlah_penjualan', $event.target.value)"
-                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white">
+                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white text-center">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->rating); ?>"
                                             wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'rating', $event.target.value)"
-                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white">
+                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white text-center">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->jumlah_permintaan); ?>"
                                             wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'jumlah_permintaan', $event.target.value)"
-                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white">
+                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white text-center">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                         <input type="text" value="<?php echo e($product->nilai_rekomendasi); ?>"
                                             wire:change="updateProduct(<?php echo e($product->product_id); ?>, 'nilai_rekomendasi', $event.target.value)"
-                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white">
+                                            class="w-full bg-transparent border-none text-gray-900 dark:text-white text-center">
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <button wire:click="delete(<?php echo e($product->product_id); ?>)"

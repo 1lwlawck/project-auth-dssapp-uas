@@ -35,7 +35,7 @@ class KriteriaComponent extends Component
         $this->editField = null;
         $this->editValue = null;
 
-        $this->mount(); // Refresh data
+        $this->mount(); // Refresh the data
     }
 
     public function render()

@@ -74,17 +74,30 @@ class ProductManagement extends Component
 
     public function store()
     {
-        $this->validate([
+        // Validasi default
+        $validatedData = $this->validate([
             'kd_produk' => 'required|unique:products,kd_produk,' . $this->product_id . ',product_id',
             'nama_produk' => 'required',
             'harga' => 'required|numeric',
             'stok' => 'required|integer',
             'jumlah_penjualan' => 'required|integer',
-            'rating' => 'required|numeric',
+            'rating' => 'required|numeric|between:0,5',
             'jumlah_permintaan' => 'required|integer',
-            'nilai_rekomendasi' => 'required|numeric',
+            'nilai_rekomendasi' => 'required|numeric|between:0,100',
         ]);
 
+        // Validasi kustom untuk rating dan nilai rekomendasi
+        if (!is_numeric($this->rating) || $this->rating < 0 || $this->rating > 5) {
+            session()->flash('error', 'Rating must be a number between 0 and 5.');
+            return;
+        }
+
+        if (!is_numeric($this->nilai_rekomendasi) || $this->nilai_rekomendasi < 0 || $this->nilai_rekomendasi > 100) {
+            session()->flash('error', 'Nilai Rekomendasi must be a number between 0 and 100.');
+            return;
+        }
+
+        // Simpan atau perbarui produk
         DB::transaction(function () {
             Product::updateOrCreate(['product_id' => $this->product_id], [
                 'kd_produk' => $this->kd_produk,
@@ -98,11 +111,11 @@ class ProductManagement extends Component
                 'description' => $this->description,
             ]);
 
-
             $this->reorderProductIDs();
         });
 
-        session()->flash('message', $this->product_id ? 'Product Updated Successfully.' : 'Product Created Successfully.');
+        $message = $this->product_id ? 'Product Updated Successfully.' : 'Product Created Successfully.';
+        session()->flash('message', $message);
 
         $this->resetInputFields();
         $this->closeModal();
@@ -128,21 +141,16 @@ class ProductManagement extends Component
     public function delete($id)
     {
         DB::transaction(function () use ($id) {
-
             Product::find($id)->delete();
-
             $this->reorderProductIDs();
         });
 
-        session()->flash('message', 'Product Deleted Successfully.');
+        session()->flash('error', 'Product Deleted Successfully.');
     }
 
     private function reorderProductIDs()
     {
-
         $products = Product::orderBy('product_id')->get();
-
-
         $currentId = 1;
         foreach ($products as $product) {
             $product->product_id = $currentId++;
